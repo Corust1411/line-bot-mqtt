@@ -44,11 +44,11 @@ app.post('/webhook', (req, res) => {
   console.log(typeof sender, typeof text)
   // console.log(req.body.events[0])
 
-  if (text === '1' || text === 'เปิด' || text === 'relay1_on') {
+  if (text === '1' || text === 'เปิด' || text === 'relay1_on' || text ===  'เปิดไฟเดี๋ยวนี้!') {
     // LED On
     ledOn(sender, text)
   }
-  else if (text === '0' || text === 'ปิด' || text === 'relay1_off') {
+  else if (text === '0' || text === 'ปิด' || text === 'relay1_off' || text ===  'ปิดไฟเดี๋ยวนี้!') {
     // LED Off
     ledOff(sender, text)
   }
@@ -140,7 +140,7 @@ function ledOn (sender, text) {
     messages: [
       {
         type: 'text',
-        text: 'เปิดประตูแล้วครับ'
+        text: 'เปิดไฟให้แล้ว'
       }
     ]
   }
@@ -186,7 +186,7 @@ function ledOff (sender, text) {
     messages: [
       {
         type: 'text',
-        text: 'ปิดประตูแล้วครับ'
+        text: 'ปิดไฟให้แล้ว'
       }
     ]
   }
